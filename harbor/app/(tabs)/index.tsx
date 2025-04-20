@@ -111,7 +111,6 @@ const darkModeStyle = [
   },
 ];
 
-
 export default function HomeScreen() {
   const [currentLocation, setCurrentLocation] = useState<{
     latitude: number;
