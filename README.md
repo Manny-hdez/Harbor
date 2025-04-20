@@ -1,4 +1,7 @@
-## To run frontend
+## About
+Built using React native + Expo + Supabase (postGresql database)
+
+## To run the app
 CD into the /frontend directory (`cd ./harbor`)
 
 If it's your first time running this application run `npm install`
