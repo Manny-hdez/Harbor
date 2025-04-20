@@ -1,17 +1,18 @@
-import * as React from "react";
+import React from "react";
+import Svg, { Path } from 'react-native-svg';
 
 const SpeechIcon = () => (
-  <svg
-    width="44"
-    height="44"
-    fill="none"
+  <Svg
+    width={44}
+    height={44}
     viewBox="0 0 44 44"
+    fill="none"
   >
-    <path
+    <Path
       fill="#fff"
       d="M33 5.5a7.333 7.333 0 0 1 7.333 7.333V27.5A7.333 7.333 0 0 1 33 34.833h-8.66l-8.731 5.238a1.833 1.833 0 0 1-2.765-1.362l-.01-.209v-3.667H11a7.333 7.333 0 0 1-7.324-6.966l-.01-.367V12.833A7.333 7.333 0 0 1 11 5.5zM22 23.833a1.833 1.833 0 0 0-1.833 1.834v.018a1.834 1.834 0 0 0 3.666 0v-.018A1.833 1.833 0 0 0 22 23.833m0-11a1.833 1.833 0 0 0-1.833 1.834v5.5a1.833 1.833 0 0 0 3.666 0v-5.5A1.833 1.833 0 0 0 22 12.833"
-    ></path>
-  </svg>
+    />
+  </Svg>
 );
 
 export default SpeechIcon;
