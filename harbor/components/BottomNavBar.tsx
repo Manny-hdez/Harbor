@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
-import { MapIcon } from 'react-native-heroicons/solid';
+import MapIcon from '@/assets/images/navbarIcons/mapIcon';
 import ShieldIcon from '@/assets/images/navbarIcons/shieldIcon';
 import SpeechIcon from '@/assets/images/navbarIcons/speechIcon';
 
