@@ -30,6 +30,7 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      
       <Stack screenOptions={{ headerShown: false }} initialRouteName="onboarding">
         <Stack.Screen name="onboarding" options={{ headerShown: false }} />
         <Stack.Screen name="sos-contact" options={{ headerShown: false }} />
