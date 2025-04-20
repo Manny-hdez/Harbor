@@ -1,6 +1,5 @@
 import { StyleSheet, Image, Platform, View, Text } from 'react-native';
 
-import { IconSymbol } from '@/components/ui/IconSymbol';
 
 export default function TabTwoScreen() {
   return (
