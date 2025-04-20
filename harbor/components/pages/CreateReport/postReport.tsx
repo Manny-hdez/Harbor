@@ -51,13 +51,8 @@ const PostReportPage: React.FC<PostReportProps> = ({
   };
 
   const handleSubmit = () => {
-    if (report.isVerified && onSubmitReport) {
       onSubmitReport(report);
-    } else if (!report.isVerified) {
-      setPage(2); 
-    } else if (!report.latitude) {
-      alert('Please select a location first.');
-    }
+      router.back
   };
 
   const handleBack = () => {
