@@ -45,6 +45,10 @@
       <key>NSAllowsLocalNetworking</key>
       <true/>
     </dict>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Your location is required to provide you with real-time updates on nearby services and personalized recommendations even when the app is not actively in use.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is required to show you nearby points of interest and improve your experience within the app.</string>
     <key>NSUserActivityTypes</key>
     <array>
       <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>

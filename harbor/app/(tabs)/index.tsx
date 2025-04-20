@@ -3,11 +3,6 @@ import { Image, StyleSheet, Platform, View } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
 export default function HomeScreen() {
   const [currentLocation, setCurrentLocation] = useState<{
     latitude: number;
@@ -41,12 +36,12 @@ export default function HomeScreen() {
   }, []);
 
   if (!currentLocation) {
-    return null; // Show a loading spinner or placeholder if needed
+    return null;
   }
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} initialRegion={currentLocation}>
+      <MapView style={styles.map} initialRegion={currentLocation} userInterfaceStyle={'dark'}>
         {markers.map((marker) => (
           <Marker
             key={marker.id}

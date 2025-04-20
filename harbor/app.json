@@ -10,7 +10,11 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ohword.harbor"
+      "bundleIdentifier": "com.ohword.harbor",
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription": "Your location is required to provide you with real-time updates on nearby services and personalized recommendations even when the app is not actively in use.",
+        "NSLocationWhenInUseUsageDescription": "Your location is required to show you nearby points of interest and improve your experience within the app."
+      }
     },
     "android": {
       "adaptiveIcon": {
