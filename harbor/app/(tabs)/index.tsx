@@ -1,7 +1,6 @@
 import React from 'react';
 import MapViewComponent from '@/components/mapView';
 import { View } from 'react-native';
-import SosPointer from '@/assets/images/pointers/sosPointer';
 import { Report } from '@/types';
 
 export default function HomeScreen() {
