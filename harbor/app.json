@@ -9,13 +9,22 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ohword.harbor",
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription": "Your location is required to provide you with real-time updates on nearby services and personalized recommendations even when the app is not actively in use.",
+        "NSLocationWhenInUseUsageDescription": "Your location is required to show you nearby points of interest and improve your experience within the app."
+      },
+      "config":{
+        "googleMapsApiKey": "AIzaSyBXxOczlp4DWwCeS8ID5frSmfxPkNACOqo"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ohword.harbor"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +45,9 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "googleMapsApiKey": "AIzaSyBXxOczlp4DWwCeS8ID5frSmfxPkNACOqo"
     }
   }
 }
