@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
+import { MapIcon } from 'react-native-heroicons/solid';
 
 interface BottomNavBarProps {
   currentRoute?: string;
@@ -30,7 +31,7 @@ export function BottomNavBar({ currentRoute = 'map' }: BottomNavBarProps) {
           onPress={() => navigateTo('/(tabs)/map')}
         >
           <View style={[styles.iconContainer, currentRoute === 'map' ? styles.activeIcon : styles.inactiveIcon]}>
-            <View style={styles.mapIcon} />
+            <MapIcon/>
           </View>
           <Text style={styles.navText}>Map</Text>
         </TouchableOpacity>
