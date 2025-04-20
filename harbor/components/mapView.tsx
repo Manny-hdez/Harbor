@@ -3,6 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
 import { PROVIDER_GOOGLE } from 'react-native-maps';
+import CustomPointer from './ui/markers/customPointer';
+import { Report } from '@/types';
 
 // Mapview set up referencing the below documentation
 // https://docs.expo.dev/versions/latest/sdk/map-view/
@@ -112,7 +114,7 @@ const darkModeStyle = [
 ];
 
 interface MapViewComponentProps {
-  markers: { id: number; latitude: number; longitude: number; isSOS: boolean; date: Date; }[];
+  markers: Report[];
 }
 
 const MapViewComponent: React.FC<MapViewComponentProps> = ({ markers }) => {
@@ -162,13 +164,7 @@ const MapViewComponent: React.FC<MapViewComponentProps> = ({ markers }) => {
         userInterfaceStyle={'dark'}
       >
         {markers.map((marker) => (
-          <Marker
-            key={marker.id}
-            coordinate={{
-              latitude: marker.latitude,
-              longitude: marker.longitude,
-            }}
-          />
+          <CustomPointer key={marker.id} report={marker}/>
         ))}
       </MapView>
     </View>

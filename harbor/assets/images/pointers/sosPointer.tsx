@@ -1,10 +1,15 @@
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
 
-const SosPointer = () => (
+interface SosPointerProps {
+  width?: number;
+  height?: number; 
+}
+
+const SosPointer: React.FC<SosPointerProps> = ({ width = 24, height = 24 }) => (
   <Svg
-    width="24"
-    height="24"
+    width={width}
+    height={height}
     fill="none"
     viewBox="0 0 24 24"
   >
