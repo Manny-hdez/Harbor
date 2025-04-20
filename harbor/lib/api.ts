@@ -10,7 +10,19 @@ export async function getAllReports(): Promise<Report[] | null> {
     console.error("Error fetching all reports:", error);
     return null;
   }
-  console.log(data)
+  console.log(data);
 
-  return data as Report[];
+  const mappedReports: Report[] = data.map((report) => ({
+    id: report.id,
+    latitude: report.latitude,
+    longitude: report.longitude,
+    address: report.address,
+    title: report.title,
+    description: report.description,
+    isSOS: report.is_sos,
+    isVerified: report.is_verified,
+    date: new Date(report.date),
+  }));
+
+  return mappedReports;
 }
