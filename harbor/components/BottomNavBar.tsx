@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
 import { MapIcon } from 'react-native-heroicons/solid';
+import ShieldIcon from '@/assets/images/navbarIcons/shieldIcon';
+import SpeechIcon from '@/assets/images/navbarIcons/speechIcon';
 
 interface BottomNavBarProps {
   currentRoute?: string;
@@ -18,7 +20,7 @@ export function BottomNavBar({ currentRoute = 'map' }: BottomNavBarProps) {
       <View style={styles.sosContainer}>
         <TouchableOpacity style={styles.sosButton} onPress={() => navigateTo('/sos')}>
           <View style={styles.sosIconContainer}>
-            <View style={styles.sosIcon} />
+            <SpeechIcon/>
           </View>
           <Text style={styles.sosText}>SOS</Text>
         </TouchableOpacity>
@@ -44,7 +46,7 @@ export function BottomNavBar({ currentRoute = 'map' }: BottomNavBarProps) {
           onPress={() => navigateTo('/(tabs)/help')}
         >
           <View style={[styles.iconContainer, currentRoute === 'help' ? styles.activeIcon : styles.inactiveIcon]}>
-            <View style={styles.helpIcon} />
+            <ShieldIcon/>
           </View>
           <Text style={[styles.navText, currentRoute !== 'help' && styles.inactiveText]}>Help</Text>
         </TouchableOpacity>
@@ -61,14 +63,14 @@ const styles = StyleSheet.create({
     height: 90,
     backgroundColor: '#000000',
     borderTopWidth: 2,
-    borderTopColor: '#333333', // Changed border color to dark gray
+    borderTopColor: '#333333',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 60,
   },
   middleSpace: {
-    width: 50, // Space for the SOS button
+    width: 50,
   },
   navItem: {
     width: 40,
