@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import Geolocation from 'react-native-geolocation-service';
+import { PROVIDER_GOOGLE } from 'react-native-maps'
 
 // Mapview set up referencing the below documentation
 // https://docs.expo.dev/versions/latest/sdk/map-view/
@@ -156,8 +157,7 @@ export default function HomeScreen() {
       <MapView
         style={styles.map}
         initialRegion={currentLocation || defaultRegion}
-        customMapStyle={darkModeStyle}
-        provider={'google'}
+        provider={PROVIDER_GOOGLE}
         userInterfaceStyle={'dark'}
         zoomEnabled={true}
         scrollEnabled={true}
