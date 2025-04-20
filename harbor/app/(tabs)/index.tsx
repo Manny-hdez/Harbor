@@ -2,6 +2,7 @@ import React from 'react';
 import MapViewComponent from '@/components/mapView';
 import { View } from 'react-native';
 import { Report } from '@/types';
+import Header from '@/components/homeHeader';
 
 export default function HomeScreen() {
   const markers: Report[] = [
@@ -13,8 +14,9 @@ export default function HomeScreen() {
   ];
 
   return (
-    <View className='bg-black h-full'>
-       <MapViewComponent markers={markers} />
+    <View className='bg-black h-full w-full pt-16'>
+        <Header/>
+        <MapViewComponent markers={markers} />
     </View>
   );
 }

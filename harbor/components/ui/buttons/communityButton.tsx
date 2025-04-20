@@ -9,7 +9,7 @@ interface CommunityButtonProps {
 
 const CommunityButton: React.FC<CommunityButtonProps> = ({ onPress, count }) => {
     return (
-    <Pressable onPress={onPress} className="bg-maroon-800 rounded-md py-2 px-4 flex-row items-center">
+    <Pressable onPress={onPress} className="bg-maroon-800 rounded-md py-2 px-4 flex flex-row items-center w-100 h-10">
       <CommunityIcon/>
 
       <Text className="text-white font-semibold mr-1">Community</Text>
