@@ -1,33 +1,69 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState, useEffect } from 'react';
 import MapViewComponent from '@/components/mapView';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { Report } from '@/types';
 import Header from '@/components/homeHeader';
 import SheetView from '@/components/ui/sheetView';
 import SheetHeader from '@/components/sheetHeader';
 import ReportFeed from '@/components/ReportFeed';
+import { getAllReports } from '@/lib/api'; // Assuming your getAllReports function is in this file
 
 export default function HomeScreen() {
-  const markers: Report[] = [
-    { id: '1', latitude: 38.5449, longitude: -121.7405, title:"SIGHTING", description:"Four armed ICE agents wearing POLICE vests were spotted outside station", address: "", isSOS: true, isVerified: false, date: new Date('2025-04-19T10:00:00Z') }, // Central Davis
-    { id: '2', latitude: 38.5503, longitude: -121.7356, title:"SOS REPORT", description:"Four armed ICE agents wearing POLICE vests were spotted outside station", address: "", isSOS: false, isVerified: true, date: new Date('2025-04-19T10:30:00Z') }, // UC Davis Campus
-    { id: '3', latitude: 38.5412, longitude: -121.7486, title:"HOME RAID", description:"Four armed ICE agents wearing POLICE vests were spotted outside station", address: "", isSOS: false, isVerified: false, date: new Date('2025-04-19T11:00:00Z') }, // South Davis
-    { id: '4', latitude: 38.5539, longitude: -121.7591, title:"WORKPLACE RAID", description:"Four armed ICE agents wearing POLICE vests were spotted outside station", address: "", isSOS: false, isVerified: true, date: new Date('2025-04-19T11:30:00Z') }, // West Davis
-    { id: '5', latitude: 38.5394, longitude: -121.7302, title:"ARREST", description:"Four armed ICE agents wearing POLICE vests were spotted outside station", address: "", isSOS: true, isVerified: false, date: new Date('2025-04-19T12:00:00Z') }, // East Davis
-  ];
+  const [reports, setReports] = useState<Report[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchReports = async () => {
+      try {
+        const fetchedReports = await getAllReports();
+        if (fetchedReports) {
+          setReports(fetchedReports);
+        } else {
+          setError('Failed to fetch reports.');
+        }
+      } catch (err: any) {
+        console.error("Error fetching reports:", err);
+        setError('An unexpected error occurred while fetching reports.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReports();
+  }, []); // Empty dependency array ensures this runs only once after the initial render
+
+  if (loading) {
+    return (
+      <View className='bg-black h-full w-full pt-16 items-center justify-center'>
+        {/* You can add a loading indicator here */}
+        <Header />
+        <Text className="text-white text-lg">Loading reports...</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View className='bg-black h-full w-full pt-16 items-center justify-center'>
+        <Header />
+        <Text className="text-red-500 text-lg">Error: {error}</Text>
+      </View>
+    );
+  }
 
   return (
     <View className='bg-black h-full w-full pt-16'>
-        <Header/>
-        <View className='h-full'>
-          <MapViewComponent markers={markers} />
-          <SheetView>
-            <View>
-              <SheetHeader/>
-              <ReportFeed reports={markers}/>
-            </View>
-          </SheetView>
-        </View>
+      <Header />
+      <View className='h-full'>
+        <MapViewComponent markers={reports} />
+        <SheetView>
+          <View>
+            <SheetHeader />
+            <ReportFeed reports={reports} />
+          </View>
+        </SheetView>
+      </View>
     </View>
   );
 }
