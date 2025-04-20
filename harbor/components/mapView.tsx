@@ -154,7 +154,7 @@ const MapViewComponent: React.FC<MapViewComponentProps> = ({ markers }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View className="bg-black" style={styles.container}>
       <MapView
         style={styles.map}
         region={currentLocation || defaultRegion}
