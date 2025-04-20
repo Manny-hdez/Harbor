@@ -2,8 +2,16 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PaperAirplaneIcon from '@/assets/images/PaperAirplaneIcon'; 
 import ReportButton from '@/components/ui/buttons/addReportButton'; 
+import { router, useRouter } from 'expo-router';
 
-const SheetHeader = () => {
+export default function SheetHeader() {
+  const router = useRouter();
+
+
+  const handlePressReport = () => {
+    router.push('/create-report');
+  };
+
   return (
     <View className="py-4 px-3 flex-row items-center justify-between">
       <View className="flex-row items-center">
@@ -12,12 +20,9 @@ const SheetHeader = () => {
       </View>
 
       <ReportButton
-        onPress={() => {
-          console.log('Report button pressed in header');
-        }}
+        onPress={handlePressReport}
       />
     </View>
   );
 };
 
-export default SheetHeader;

@@ -1,5 +1,5 @@
 export interface Report {
-  id: number;
+  id?: string;
   latitude: number;
   longitude: number;
   address: string;
