@@ -160,8 +160,6 @@ export default function HomeScreen() {
         customMapStyle={darkModeStyle}
         provider={PROVIDER_GOOGLE}
         userInterfaceStyle={'dark'}
-        zoomEnabled={true}
-        scrollEnabled={true}
       >
         {markers.map((marker) => (
           <Marker
