@@ -4,7 +4,7 @@ import { TouchableOpacity, Text, View, Image, Pressable } from 'react-native';
 
 interface CommunityButtonProps {
     onPress: () => void; // Function to handle button press
-    count?: number; // Optional count to display
+    count: number; // Optional count to display
 }
 
 const CommunityButton: React.FC<CommunityButtonProps> = ({ onPress, count }) => {
