@@ -2,11 +2,13 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 
-export default function PickLocationHeader() {
+
+
+export const PickLocationHeader = () => {
   const router = useRouter();
 
-  const handleCancel = () => {
-    router.back();
+  const handleBack = () => {
+    router.back()
   };
 
   const handleLanguageSelect = () => {
@@ -16,7 +18,7 @@ export default function PickLocationHeader() {
   return (
     <View className="py-4 px-4 flex-col items-center justify-between bg-black">
       <View className='w-full'>
-        <Pressable onPress={handleCancel}>
+        <Pressable onPress={handleBack}>
           <Text className="text-white text-base">Cancel</Text>
         </Pressable>
       </View>

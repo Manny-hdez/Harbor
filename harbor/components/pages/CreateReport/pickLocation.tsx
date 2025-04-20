@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import MapView, { Marker, LatLng, Region, PROVIDER_GOOGLE } from 'react-native-maps';
-import PickLocationHeader from './pickLocationHeader';
+import {PickLocationHeader} from '@/components/pages/CreateReport/pickLocationHeader';
 
 // Dark mode style JSON
 const darkModeStyle = [
@@ -142,7 +142,7 @@ const LocationSelector: React.FC<LocationSelectorProps> = ({
 
   return (
     <View className="bg-black h-full w-full pt-16" style={styles.container}>
-      <PickLocationHeader />
+      <PickLocationHeader/>
       <MapView
         style={styles.map}
         region={initialRegion || defaultRegion}

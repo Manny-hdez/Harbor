@@ -11,7 +11,7 @@ import { Report } from '@/types';
 export default function CreateReport() {
   const [pageIndex, setPageIndex] = useState(1);
   const [report, setReport] = useState<Report>({
-    id: 0,
+    id: '0',
     latitude: 0,
     longitude: 0,
     address: '',
@@ -39,7 +39,7 @@ export default function CreateReport() {
   return (
     <View className='bg-black h-full w-full h-full'>
       {pageIndex === 1 && <PickLocationPage onLocationSelect={handleLocationSelect} />}
-      {pageIndex === 2 && <PostReportPage onSubmitReport={handleReportSubmit} report={report} setReport={setReport} />}
+      {pageIndex === 2 && <PostReportPage setIndex={setPageIndex} onSubmitReport={handleReportSubmit} report={report} setReport={setReport} />}
     </View>
   );
 }

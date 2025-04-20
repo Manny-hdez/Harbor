@@ -1,12 +1,22 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Pressable } from 'react-native';
-import { useRouter } from 'expo-router';
+import ReportIcon from '@/assets/images/reportIcon';
 
-export default function PickLocationHeader() {
-  const router = useRouter();
+interface PostReportHeaderProps {
+    setPage: (index: number) => void;
+    page: number;
+    setIndex: (index: number) => void;
+}
 
-  const handleCancel = () => {
-    router.back();
+export const PostReportHeader: React.FC<PostReportHeaderProps> = ({ setPage, page, setIndex }) => {
+
+  const handleBack = () => {
+    if(page>1){
+      setPage(page-1);
+    } else {
+      setIndex(1);
+    }
+    
   };
 
   const handleLanguageSelect = () => {
@@ -14,13 +24,18 @@ export default function PickLocationHeader() {
   };
 
   return (
-    <View className="py-4 px-4 flex-col items-center justify-between bg-black">
-      <View className='w-full'>
-        <Pressable onPress={handleCancel}>
-          <Text className="text-white text-base">Cancel</Text>
+    <View className="py-4 px-4 bg-black">
+      <View className="w-full">
+        <Pressable onPress={handleBack}>
+          <Text className="text-white text-base">Back</Text>
         </Pressable>
       </View>
-        <Text className="w-full mt-6 text-white text-3xl font-semibold text-left">Select incident location</Text>
+      <View className=" w-full">
+        <View className="mt-3 mr-4">
+          <ReportIcon />
+        </View>
+        <Text className="text-white text-5xl font-semibold mt-4 mb-5">Post a report</Text>
+      </View>
     </View>
   );
 }
