@@ -14,7 +14,7 @@ Then run
 or for ios
 `npx expo run:ios`
 or for android
-`npx expo run`
+`npx expo run:android`
 
 Sometimes you'll run into build errors on the emulator. To fix try completely rebuilding:
 `rm -rf node_modules package-lock.json`
