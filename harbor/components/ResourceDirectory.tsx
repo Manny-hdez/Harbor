@@ -80,7 +80,7 @@ export const RedCard = () => {
                 end={{ x: 0, y: 1 }}
                 style={{ flex: 1 }}
             >
-              <View className='flex mt-28 items-center'>
+              <View className='flex mt-20 items-center'>
                 <Text className='text-white text-4xl font-bold mb-8'>Red Card</Text>
               </View>
 
@@ -89,7 +89,7 @@ export const RedCard = () => {
                     You have constitutional rights:
                 </Text>
 
-                <View className="my-7 mx-6">
+                <View className="my-3 mx-6">
                     <Text style={{ fontSize: 16, lineHeight: 24, color: "#FFFFFF" }}>
                         {'\u2022'}{' '}
                         <Text className='font-bold'>
@@ -124,7 +124,7 @@ export const RedCard = () => {
                 {/* Exit button */}
                 <Pressable
                 onPress={() => setModalVisible(false)}
-                className="mt-4"
+                className="mt-0"
                 >
                 <Text className="text-white text-center text-xl">
                     Exit

@@ -21,9 +21,9 @@ const Header = () => {
         className="py-10"
       >
         <View className='gap-x-3 flex flex-row ml-2'>
-            <CommunityButton onPress={() => console.log("hi")} count={0}/>
-            <OrgVerifiedButton onPress={() => console.log("hi")} count={0}/>
-            <SosButton onPress={() => console.log("hi")} count={0}/>
+            <CommunityButton onPress={() => console.log("hi")} count={1}/>
+            <OrgVerifiedButton onPress={() => console.log("hi")} count={2}/>
+            <SosButton onPress={() => console.log("hi")} count={2}/>
         </View>
       </ScrollView>
     </View>

@@ -7,6 +7,7 @@ import PostReportPage from '@/components/pages/CreateReport/postReport';
 import { View } from 'react-native';
 import { LatLng } from 'react-native-maps';
 import { Report } from '@/types';
+import { router } from 'expo-router';
 
 export default function CreateReport() {
   const [pageIndex, setPageIndex] = useState(1);
@@ -30,6 +31,7 @@ export default function CreateReport() {
 
   const handleReportSubmit = (report: Report) => {
     console.log('Final Report:', report);
+    router.back()
   };
 
   useEffect(() => {
